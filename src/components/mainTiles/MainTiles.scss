@@ -1,0 +1,462 @@
+.MainTilesContainer {
+    height: 902px;
+    width: 100%;
+    margin: 42px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.TileArrSmall {
+    display: none;
+}
+
+.TilesTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: calc(50% - 11px);
+}
+
+.TilesTopLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(50% - 11px);
+}
+
+.TileCatalogueBtn {
+    width: calc(100% - 4px);
+    height: 57px;
+    border: double 2px transparent;
+    border-radius: 8px;
+    background-image: linear-gradient(white, white),
+        linear-gradient(to top left, #65AEFE 0%, #A081ED 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+        margin: 0 10px 0 20px;
+        background-image: linear-gradient(to top left, #65AEFE, #A081ED);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 22px;
+        font-weight: 500;
+    }
+}
+
+.TileSub {
+    z-index: 1;
+    font-size: 36px;
+    font-size: 1.9vw;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    span {
+        margin-right: 10px;
+    }
+
+    img {
+        width: 1.3vw;
+        height: 1.3vw;
+        min-width: 14px;
+        min-height: 14px;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.TileShoes {
+    width: 100%;
+    height: calc(100% - 61px - 22px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .TileSub {
+        margin: 0 0 20px 20px;
+    }
+}
+
+.ShoTile {
+    position: absolute;
+    height: 135%;
+    left: 15%;
+    top: -8%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.TileClothes {
+    width: calc(50% - 11px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .TileSub {
+        margin: 0 0 20px 20px;
+    }
+}
+
+.CloTile {
+    position: absolute;
+    width: 72%;
+    left: 30%;
+    top: -10%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.TilesBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: calc(50% - 11px);
+}
+
+.TileAccessories {
+    width: calc(100% / 3 - 14.7px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .TileSub {
+        margin: 20px 0 0 20px;
+    }
+}
+
+.AccTile {
+    position: absolute;
+    width: 80%;
+    left: 23%;
+    top: 20%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.TileCosmetics {
+    width: calc(100% / 3 - 14.7px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .TileSub {
+        margin: 20px 0 0 20px;
+    }
+}
+
+.CosTile {
+    position: absolute;
+    width: 112%;
+    left: 5%;
+    top: 20%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.TilePerfumery {
+    width: calc(100% / 3 - 14.7px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .TileSub {
+        margin: 20px 0 0 20px;
+    }
+}
+
+.TileAccessories2 {
+    width: calc(100% / 3 - 14.7px);
+    height: 100%;
+    display: none;
+    flex-direction: column;
+
+    .TileSub {
+        margin: 20px 0 0 20px;
+    }
+}
+
+.PerTile {
+    position: absolute;
+    width: 40%;
+    left: 30%;
+    top: 20%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.TileShoes,
+.TileClothes,
+.TileAccessories,
+.TileCosmetics,
+.TilePerfumery,
+.TileAccessories2 {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: opacity .1s linear, transform .1s linear;
+
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:active {
+            transform: scale(0.995);
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            opacity: 0.8;
+        }
+    }
+}
+
+.TileImg,
+.TileImg2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+}
+
+.TileImg2 {
+    display: none;
+}
+
+@media (min-width: 1920px) {
+    .TileSub {
+        font-size: 36px;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+@media (max-width: 1700px) {
+    .MainTilesContainer {
+        height: 53vw;
+    }
+
+    .ShoTile {
+        left: unset;
+        right: -18%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .MainTilesContainer {
+        margin: 22px 0;
+    }
+}
+
+@media (max-width: 850px) {
+    .TileSub {
+        font-size: 16px;
+    }
+
+    .TileCatalogueBtn {
+        span {
+            font-size: 2.6vw;
+            font-size: 12px;
+        }
+    }
+
+    .MainTilesContainer {
+        // height: 600px;
+        height: fit-content;
+    }
+
+    .TileCatalogueBtn {
+        height: 36px;
+        border: double 1.5px transparent;
+
+        span {
+            margin: 0 4px 0 14px;
+        }
+    }
+
+    .TileArrBig {
+        display: none;
+    }
+
+    .TileArrSmall {
+        display: block;
+    }
+
+    .TileShoes {
+        height: calc(100% - 40px - 16px);
+    }
+
+    .TilesTop {
+        min-height: 232px;
+        height: 40vw;
+    }
+
+    .TilesBottom {
+        min-height: 162px;
+        height: 28vw;
+        margin-top: 16px;
+        flex-direction: row-reverse;
+    }
+
+    .TileAccessories2 {
+        width: 100%;
+        min-height: 115px;
+        height: 19vw;
+        margin-top: 16px;
+    }
+
+    .TileSub {
+        margin: 10px 0 0 10px !important;
+        align-self: flex-start;
+
+        span {
+            margin-right: 4px;
+        }
+
+        img {
+            height: 14px;
+            width: 14px;
+        }
+    }
+
+    .TileShoes {
+        justify-content: flex-start;
+    }
+
+    .TileClothes {
+        justify-content: flex-start;
+    }
+
+    .TilePerfumery {
+        width: calc(56.25% - 8px);
+        align-items: center;
+    }
+
+    .TileCosmetics {
+        width: calc(43.75% - 8px);
+    }
+
+    .TilesTopLeft {
+        width: calc(50% - 8px);
+    }
+
+    .TileClothes {
+        width: calc(50% - 8px);
+    }
+
+    .TileAccessories {
+        display: none;
+    }
+
+    .TileAccessories2 {
+        display: flex;
+    }
+
+    .TileImg {
+        display: none;
+    }
+
+    .TileImg2 {
+        display: block;
+    }
+
+    .ShoTile {
+        min-height: 90%;
+        height: 35vw;
+        top: 10%;
+    }
+
+    .CloTile {
+        width: 115%;
+        top: 20%;
+        left: -7.5%;
+    }
+
+    .PerTile {
+        height: 125%;
+        width: unset;
+        align-self: center;
+        left: unset;
+        right: unset;
+    }
+
+    .CosTile {
+        min-width: 182px;
+        width: 80%;
+        right: -16%;
+        left: unset;
+    }
+
+    .AccTile {
+        top: -15%;
+        height: 200%;
+        width: unset;
+        right: 20%;
+        left: unset;
+    }
+}
+
+@media (max-width: 390px) {
+    .TileShoes {
+        align-items: center;
+    }
+
+    .ShoTile {
+        left: unset;
+        right: unset;
+        margin-right: 20px;
+        top: 20%;
+    }
+
+    .CosTile {
+        right: unset;
+        left: -5%;
+    }
+
+    .AccTile {
+        right: unset;
+        left: 40%;
+    }
+
+    .CloTile {
+        width: 130%;
+        left: -15%;
+        top: 25%;
+    }
+}
+
+@media (max-width: 342px) {
+    .TileCatalogueBtn {
+        height: fit-content;
+
+        span {
+            margin: 5px 4px 5px 14px;
+        }
+    }
+
+    .TileArrSmall {
+        margin-right: 6px;
+    }
+
+    .TileShoes {
+        height: calc(100% - 45px - 16px);
+    }
+}

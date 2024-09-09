@@ -1,0 +1,138 @@
+.GuaranteeInfo {
+    margin-top: 42px;
+
+    h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #020202;
+        margin: 0 0 16px 0;
+    }
+
+    h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 12px 0;
+        color: #121212;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 160%;
+        color: #121212;
+        margin: 0 0 12px 0;
+    }
+
+    .GListItem {
+        color: #121212BF;
+    }
+}
+
+.GradientText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+
+    p {
+        max-width: 551px;
+        margin-bottom: 0;
+    }
+}
+
+.GradientVerticalLine {
+    width: 4px;
+    min-width: 4px;
+    height: 52px;
+    margin-right: 16px;
+    border-radius: 7px;
+    background-image: linear-gradient(to bottom, #65AEFE 0%, #A081ED 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.GuaranteeImg {
+    width: 100%;
+    max-height: 498px;
+    min-height: 182px;
+    height: 26vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+}
+
+.GuaranteeImg2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+        height: auto;
+        max-width: 397px;
+    }
+}
+
+@media (max-width: 775px) {
+    .GuaranteeInfo {
+        margin-top: 26px;
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h4 {
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .GuaranteeImg {
+        height: 47vw;
+        min-height: 172px;
+        max-height: unset;
+    }
+
+    .GradientVerticalLine {
+        width: 2px;
+        min-width: 2px;
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 462px) {
+    .GradientVerticalLine {
+        height: 57px;
+    }
+}
+
+@media (max-width: 450px) {
+    .GuaranteeImg2 {
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 345px) {
+    .GradientVerticalLine {
+        height: 77px;
+    }
+}
+
+@media (max-width: 340px) {
+    .GuaranteeImg {
+        height: fit-content;
+        max-height: 172px;
+        min-height: unset;
+    }
+}

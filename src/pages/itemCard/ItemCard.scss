@@ -1,0 +1,630 @@
+@use '../../base.scss';
+
+.ItemCard {
+    width: 80%;
+    max-width: 1360px;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ItemCardLine {
+    width: 100%;
+    height: 1px;
+    background-color: #eeeeee;
+    margin-top: 24px;
+}
+
+.ItemCardInfo {
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.ItemCardDetails {
+    width: 325px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ICDSub {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    span {
+        font-size: 24px;
+        font-weight: 700;
+        color: #121212;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+}
+
+.WishIconBoxCard {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transition: transform 0.1s linear;
+
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.15);
+        }
+    }
+}
+
+.WishIconCard {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform 0.1s linear, opacity 0.1s linear;
+    user-select: none;
+    opacity: 0;
+}
+
+.WishIconCard.Active {
+    opacity: 1;
+}
+
+.ICDModel {
+    font-size: 16px;
+    font-weight: 500;
+    color: #02020259;
+}
+
+.ICDSizes {
+    margin-top: 24px;
+}
+
+.ICDSizesSub {
+    font-size: 16px;
+    font-weight: 700;
+    color: #020202;
+}
+
+.ICDSizesList {
+    width: calc(100% + 8.3px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -8.3px;
+}
+
+.ICDSize {
+    width: 75px;
+    height: 40px;
+    margin-left: 8.3px;
+    margin-top: 8px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .3s ease, color .3s ease;
+}
+
+.ChosenSize {
+    background-color: #121212;
+    color: white;
+}
+
+.SizesTable {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #a6a6a6;
+    height: 23px;
+    width: fit-content;
+    border-bottom: solid 1px #a6a6a6;
+    cursor: pointer;
+}
+
+.ICDShipSub {
+    font-size: 16px;
+    font-weight: 700;
+    color: #020202;
+    margin-top: 24px;
+}
+
+.ICDShip {
+    margin-top: 8px;
+    width: calc(100% - 24px);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #eeeeee;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border .3s ease;
+}
+
+.ChosenShip {
+    border: solid 1px #121212;
+}
+
+.ICDSSub {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .Time {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .Price {
+        display: block;
+        background-color: #121212;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.ICDSVPar {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #02020280;
+}
+
+.ICDPrice {
+    margin-top: 24px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.ICDBuy {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ICDBuyInCart {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // flex-direction: row;
+    // justify-content: space-between;
+}
+
+.ICDBBtn {
+    width: 257px;
+    height: 60px;
+    background-image: linear-gradient(to bottom left, #65AEFE 0%, #8181ed 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    @include base.btn();
+
+    .Sub {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+    }
+
+    .Size {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        color: #ffffffa3;
+    }
+}
+
+
+.ICDBBtnInCart {
+    width: 100%;
+    height: 60px;
+    background-image: linear-gradient(to bottom left, #65AEFE 0%, #8181ed 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    @include base.btn();
+
+    .Sub {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+    }
+
+    .Size {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        color: #ffffffa3;
+    }
+}
+
+.ICDBBtnInCart.White {
+    background-color: #F5F5F5;
+    color: #121212;
+    background-image: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+
+    img {
+        margin: 0 19px;
+    }
+}
+
+.RemoveCartAbsolute {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.AddCartAbsolute {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    z-index: 10;
+}
+
+.ICSBCart {
+    width: 60px;
+    height: 60px;
+    background-image: linear-gradient(to bottom left, #65AEFE 0%, #819eed 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    @include base.btn();
+
+    img {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.ICDSplit {
+    margin-top: 12px;
+    width: calc(100% - 3px);
+    border: double 1.5px transparent;
+    background-image: linear-gradient(white, white),
+        linear-gradient(to bottom left, #65AEFE 0%, #A081ED 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-color: #66ADFE0d;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+
+    span {
+        padding: 6.5px 0;
+        background: linear-gradient(to bottom left, #65AEFE, #A081ED);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+.BackGradient {
+    background-color: #65AEFE0D;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.ICDHelpSub {
+    font-size: 16px;
+    font-weight: 700;
+    color: #020202;
+    margin-top: 24px;
+}
+
+.ICDHelpPar {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ICDTgBtn {
+    margin-top: 16px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    @include base.btn();
+}
+
+.SizesTableModal {
+    width: 100vw;
+    height: 100svh;
+    background-color: #161616BD;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.SizesTableModal.ActiveTable {
+    display: flex;
+}
+
+.SizesTableBox {
+    width: calc(600px - 56px);
+    max-height: calc(100svh - 20px - 56px);
+    padding: 28px;
+    border-radius: 8px;
+    overflow: auto;
+    background-color: white;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        display: none;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    tbody {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    tr {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+    th,
+    td {
+        width: 50px;
+        text-align: start;
+    }
+
+    th {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    td {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    tr:not(:last-child) {
+        border-bottom: 1px solid #ECECEC;
+    }
+
+    tr:first-child {
+        border-top: 1px solid #ECECEC;
+    }
+}
+
+.STBTop {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 31px;
+}
+
+.STBSub {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+    .ItemCardInfo {
+        flex-direction: column;
+    }
+
+    .ICDSub {
+        margin-top: 16px;
+    }
+
+    .ItemCardDetails {
+        width: 100%;
+    }
+
+    .ICDBBtn {
+        width: calc(100% - 60px - 8px);
+    }
+}
+
+@media (max-width: 850px) {
+    .ItemCard {
+        width: 88%;
+        padding: 0 6%;
+    }
+
+    .SizesTableBox {
+        padding: 20px;
+        width: 82%;
+
+        th,
+        td {
+            font-size: 16px;
+        }
+
+        tr {
+            padding: 18px 0;
+        }
+    }
+
+    .STBSub {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 470px) {
+    .ICDSub {
+        span {
+            font-size: 20px;
+        }
+
+        img {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    .ICDModel {
+        font-size: 12px;
+    }
+
+    .ICDSizes {
+        margin-top: 14px;
+    }
+
+    .ICDSizesSub {
+        font-size: 14px;
+    }
+
+    .ICDSize {
+        width: 60px;
+        height: 31px;
+        font-size: 12px;
+        margin-top: 12px;
+    }
+
+    .SizesTable {
+        margin-top: 12px;
+        font-size: 14px;
+    }
+
+    .ICDShipSub {
+        margin-top: 26px;
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .ICDShip {
+        padding: 10px;
+        margin-top: 0;
+    }
+
+    .ICDShip+.ICDShip {
+        margin-top: 6px;
+    }
+
+    .ICDSSub {
+        .Time {
+            font-size: 14px;
+        }
+
+        .Price {
+            font-size: 12px;
+            border-radius: 4px;
+        }
+    }
+
+    .ICDSVPar {
+        font-size: 12px;
+    }
+
+    .ICDPrice {
+        margin-top: 26px;
+        font-size: 16px;
+    }
+
+    .ICDBuy {
+        margin-top: 12px;
+    }
+
+    .ICDBBtn {
+        height: 40px;
+        width: calc(100% - 40px - 4px);
+
+        .Sub {
+            font-size: 12px;
+        }
+
+        .Size {
+            font-size: 10px;
+        }
+    }
+
+    .ICSBCart {
+        height: 40px;
+        width: 40px;
+
+        img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    .ICDSplit {
+        margin-top: 12px;
+        font-size: 12px;
+    }
+
+    .ICDHelpSub {
+        margin-top: 26px;
+        font-size: 14px;
+    }
+
+    .ICDHelpPar {
+        margin-top: 12px;
+        font-size: 12px;
+    }
+
+    .ICDTgBtn {
+        margin-top: 12px;
+        height: 40px;
+        font-size: 14px;
+    }
+}

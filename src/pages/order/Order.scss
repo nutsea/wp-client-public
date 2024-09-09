@@ -1,0 +1,809 @@
+@use '../../base.scss';
+
+.Order {
+    width: 80%;
+    max-width: 1360px;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.OrderSub {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.OrderRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.OrderInputs {
+    width: calc(100% - 310px - 95px);
+}
+
+.OrderInputsGroup {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.OrderInputsGroup+.OrderInputsGroup {
+    margin-top: 42px;
+}
+
+.SpaceBetween {
+    justify-content: space-between;
+}
+
+.OIGSub {
+    width: 100%;
+    margin-bottom: 4px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #121212;
+}
+
+.InputError {
+    border: solid 1px #db0000 !important;
+}
+
+.OrderInputBox {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    label {
+        font-size: 16px;
+        font-weight: 700;
+        color: #020202;
+        margin-bottom: 12px;
+    }
+
+    .InputRelative {
+        position: relative;
+    }
+
+    input,
+    .InputInfo {
+        width: calc(100% - 28px);
+        outline: none;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: 'Manrope', sans-serif;
+        border: solid 1px #EAEAEA;
+        border-radius: 6px;
+
+        &::placeholder {
+            color: #A6A6A6;
+        }
+    }
+
+    .InputClose {
+        position: absolute;
+        right: 14px;
+        width: 18px;
+        height: 18px;
+        top: calc(50% - 9px);
+        cursor: pointer;
+    }
+
+    .Error {
+        border: solid 1px #c60000;
+    }
+
+    span {
+        font-size: 10px;
+        font-weight: 500;
+        color: #B6B6B6;
+        margin-top: 12px;
+    }
+
+    span+span {
+        margin-top: 0;
+    }
+}
+
+.AutocompleteAddress {
+    position: absolute;
+    color: #020202;
+    top: calc(100% + 10px);
+    width: 100%;
+    border: solid 1px #EAEAEA;
+    border: solid 1px #020202;
+    border-radius: 6px;
+    background-color: white;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.AutocompleteItem {
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: #F5F5F5;
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            background-color: #F5F5F5;
+        }
+    }
+}
+
+.InlineInput {
+    width: 31.3%;
+}
+
+.BlockInput {
+    width: 100%;
+}
+
+.OrderCheckBox {
+    margin-top: 28px;
+    height: fit-content;
+    padding: 14px;
+    border: solid 1px #EAEAEA;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border 0.2s ease;
+}
+
+.OrderCheckBox+.OrderCheckBox {
+    margin-left: 28px;
+}
+
+.Unavailable {
+    pointer-events: none;
+
+    .CheckBoxSub,
+    .CheckBoxSub2 {
+        color: #B6B6B6;
+    }
+
+    .CheckBoxSub2 {
+        font-weight: 400;
+    }
+
+    .Bright {
+        color: #121212;
+    }
+}
+
+.SameBox {
+    width: 260px;
+}
+
+.FitBox1 {
+    width: calc(42.6% - 2px - 28px - 14px);
+}
+
+.FitBox2 {
+    width: calc(57.39% - 2px - 28px - 14px);
+}
+
+.CheckBoxRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.CheckBoxPoint {
+    width: 14px;
+    height: 14px;
+    background-color: #EAEAEA;
+    border-radius: 14px;
+    margin-right: 14px;
+    position: relative;
+    transition: background-color 0.2s ease;
+
+    &::before {
+        position: absolute;
+        content: '';
+        height: 4px;
+        width: 4px;
+        background-color: white;
+        border-radius: 4px;
+        top: calc(50% - 2px);
+        left: calc(50% - 2px);
+    }
+}
+
+.CheckBoxText {
+    width: calc(100% - 28px);
+}
+
+.CheckBoxSub {
+    font-size: 16px;
+    font-weight: 700;
+    color: #020202;
+}
+
+.CheckBoxSub2 {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #020202a8;
+
+    b {
+        font-weight: 600;
+    }
+}
+
+.CheckBoxTip {
+    margin-top: 16px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #B6B6B6;
+}
+
+.ChosenOrderCheck {
+    border: solid 1px #020202;
+
+    .CheckBoxPoint {
+        background-color: #020202;
+    }
+}
+
+.OrderBtns {
+    margin-top: 42px;
+    display: flex;
+    flex-direction: row;
+}
+
+.OrderCheckCost,
+.OrderConfirm {
+    width: 288px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    @include base.btn();
+}
+
+.OrderCostChecker,
+.OrderOrderer {
+    margin-top: 10px;
+    display: none;
+    flex-direction: row;
+    align-items: flex-end;
+    font-size: 12px;
+    color: #121212;
+}
+
+.OrderCostChecker.Active,
+.OrderOrderer.Active {
+    display: flex;
+}
+
+.CheckLoad {
+    margin-left: 5px;
+    margin-bottom: 2px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #121212;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.OrderConfirm {
+    background-color: #1212124D;
+    pointer-events: none;
+}
+
+.OrderConfirm.Active {
+    background-color: #121212;
+    pointer-events: auto;
+}
+
+.OrderCheckError,
+.OrderOrdererError {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #E33A3A;
+    transition: opacity 0.2s ease;
+    display: none;
+}
+
+.OrderCheckError.Active,
+.OrderOrdererError.Active {
+    display: block;
+}
+
+.OrderInfo {
+    width: 310px;
+    height: fit-content;
+    border: solid 1px #EAEAEA;
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.OrderInfoSub {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.OrderImages {
+    width: calc(100% + 9px);
+    display: flex;
+    flex-direction: row;
+    margin-top: 13px;
+    flex-wrap: wrap;
+    margin-left: -9px;
+}
+
+.OrderItems {
+    margin-top: 22px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: #EEEEEE;
+        bottom: 0;
+    }
+}
+
+.OrderItem {
+    padding: 16px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: #EEEEEE;
+        top: 0;
+    }
+}
+
+.OrderItemInfo {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 57px - 10px - 18px - 12px);
+}
+
+.OrderItemDelete {
+    width: 18px;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+    }
+}
+
+.OrderItemImgBox {
+    width: 57px;
+    height: 62px;
+    padding: 6px;
+    border: solid 1px #F6F6F6;
+    border-radius: 6px;
+    margin-right: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.OrderItemImg {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.OrderItemName {
+    font-size: 14px;
+    font-weight: 700;
+    color: #121212;
+    margin-bottom: 4px;
+}
+
+.OrderItemModel {
+    font-size: 12px;
+    font-weight: 400;
+    color: #02020259;
+}
+
+.OrderItemSize {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #121212;
+}
+
+.OrderCount {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 40px;
+}
+
+.OrderCountText {
+    font-size: 16px;
+    font-weight: 600;
+    color: #020202;
+}
+
+.OrderCountSum {
+    font-size: 16px;
+    font-weight: 700;
+    color: #121212;
+}
+
+.OrderItemsShip {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+        margin-right: 4px;
+        width: 16px;
+    }
+
+    span {
+        color: #020202;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.OrderTotal {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.SumSmall {
+    font-size: 16px;
+    font-weight: 600;
+    color: #9B9B9B;
+    margin-right: 10px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: calc(100% + 4px);
+        height: 1.5px;
+        background-color: #9B9B9B;
+        top: calc(50% + 0.5px);
+        left: -2px;
+    }
+}
+
+.OrderSplitInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 22px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #020202;
+}
+
+.OrderSplitInfo+.OrderSplitInfo {
+    margin-top: 6px !important;
+}
+
+.SplitTime {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #02020259;
+}
+
+.OrderTotalLine {
+    margin-top: 22px;
+    width: 100%;
+    height: 1px;
+    background-color: #EAEAEA;
+}
+
+.PromoError {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #E33A3A;
+}
+
+.PromoSuccess {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #9B9B9B;
+}
+
+.SubmitPromo {
+    margin-top: 22px;
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    @include base.btn();
+}
+
+.MobileTotal {
+    display: none;
+}
+
+@media (max-width: 1460px) {
+    .OrderInputsGroup {
+        flex-direction: column;
+    }
+
+    .OrderInputBox {
+        width: 100%;
+    }
+
+    .OrderCheckBox {
+        width: calc(100% - 28px);
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 1230px) {
+    .OrderBtns {
+        flex-direction: column;
+    }
+
+    .OrderCheckCost,
+    .OrderConfirm {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .OrderConfirm {
+        margin-top: 14px;
+    }
+}
+
+@media (max-width: 950px) {
+    .OrderRow {
+        flex-direction: column-reverse;
+    }
+
+    .OrderInputs,
+    .OrderInfo {
+        width: 100%;
+    }
+
+    .OrderInfo {
+        border: none;
+        padding: unset;
+    }
+
+    .PCOrder {
+        display: none;
+    }
+
+    .OrderInfoSub,
+    .OIGSub {
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    .OrderInputs {
+        margin-top: 26px;
+    }
+
+    .OrderInputBox {
+        margin-top: 22px;
+    }
+
+    .OrderInputsGroup+.OrderInputsGroup {
+        margin-top: 26px;
+    }
+
+    .OrderInputBox label {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .OrderCheckBox {
+        margin-top: 14px;
+    }
+
+    .OIGSub {
+        margin-bottom: 0;
+    }
+
+    .MB8 {
+        margin-bottom: 8px;
+    }
+
+    .MobileTotal {
+        margin-top: 19px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .OIGSub {
+        font-size: 14px;
+    }
+
+    .OrderTotal {
+        font-size: 16px;
+    }
+
+    .SumSmall {
+        font-size: 12px;
+        margin-right: 10px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: calc(100% + 4px);
+            height: 1px;
+            background-color: #9B9B9B;
+            top: 50%;
+            left: -2px;
+        }
+    }
+
+    .OrderPromo {
+        margin-top: 19px;
+    }
+
+    .PromoError {
+        font-size: 12px;
+    }
+
+    .PromoSuccess {
+        font-size: 12px;
+    }
+
+    .PromoInput {
+        margin-top: 0;
+    }
+
+    .OrderCountText,
+    .OrderCountSum {
+        font-size: 12px;
+    }
+
+    .OrderCount {
+        margin-top: 15px;
+    }
+
+    .OrderTotal {
+        margin-top: 8px;
+    }
+
+    .OrderPromo {
+        margin-top: 19px;
+    }
+
+    .OrderItemsShip {
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .OrderCheckCost,
+    .OrderConfirm,
+    .SubmitPromo {
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .OrderInputBox {
+
+        input,
+        .InputInfo {
+            font-size: 12px;
+        }
+    }
+
+    .CheckBoxSub {
+        font-size: 14px;
+    }
+
+    .CheckBoxSub2 {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 530px) {
+
+    .OrderInfoSub,
+    .OIGSub {
+        font-size: 14px;
+    }
+
+    .OrderInputBox label {
+        font-size: 12px;
+    }
+
+    .CheckBoxSub {
+        font-size: 12px;
+    }
+
+    .CheckBoxSub2 {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 850px) {
+    .Order {
+        width: 88%;
+        padding: 0 6%;
+    }
+
+    .OrderSub {
+        font-size: 20px;
+        margin-top: 26px;
+    }
+
+    .OrderSplitInfo {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .SplitTime {
+        font-size: 10px;
+    }
+
+    .OrderCheckError {
+        font-size: 10px;
+    }
+}

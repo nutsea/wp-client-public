@@ -1,0 +1,316 @@
+.PaymentInfo {
+    margin-top: 42px;
+
+    h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #020202;
+        margin: 0 0 16px 0;
+    }
+
+    h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 12px 0;
+        color: #121212;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 160%;
+        color: #121212;
+        margin: 0 0 12px 0;
+    }
+}
+
+.PaymentLink {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0051ff;
+    cursor: pointer;
+}
+
+.PayTypes {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.PayType {
+    width: 108px;
+    height: 48px;
+    background-color: #F7F7F7;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        user-select: none;
+        pointer-events: none;
+    }
+
+    img {
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.PayType+.PayType {
+    margin-left: 10px;
+}
+
+.SberType {
+    width: 69px;
+    height: 19px;
+}
+
+.TinkType {
+    width: 104px;
+    height: 30px;
+}
+
+.SbpType {
+    width: 78px;
+    height: 42px;
+    mix-blend-mode: multiply;
+}
+
+.SplitType {
+    font-size: 19px;
+    font-weight: 900;
+    color: black;
+}
+
+.SplitDescription {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.SplitDescText {
+    width: calc(100% - 271px - 74px);
+    margin-top: 31px;
+}
+
+.SplitDescImg {
+    width: 271px;
+
+    img {
+        width: 100%;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.ShipSteps {
+    margin: 8px 0 36px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.StepsLine {
+    background-color: #D9D9D9;
+    height: 2px;
+    width: 100%;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    z-index: 0;
+}
+
+.StepsBox,
+.StepsBox2 {
+    width: calc(100% - 5.9vw);
+    min-width: calc(100% - 112px);
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 0;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.StepsBox2 {
+    display: none;
+}
+
+.ShipStep {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 800;
+
+    img {
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.PointMob {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .ShipStep {
+        width: 30%;
+    }
+
+    .MobNone {
+        display: none;
+    }
+
+    .StepsBox {
+        align-self: flex-start;
+    }
+
+    .StepsBox2 {
+        display: flex;
+        margin-top: 50px;
+        align-self: flex-end;
+    }
+
+    .StepsLine {
+        height: 99px;
+        background-color: unset;
+        border: double 2px transparent;
+        border-radius: 26px;
+        background-image: linear-gradient(white, white),
+            linear-gradient(to left, #D9D9D9 0%, #FFF 100%);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 120%;
+            left: -20%;
+            height: 2px;
+            top: -2px;
+            background-image: linear-gradient(to right, #D9D9D9 0%, #D9D9D900 100%);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            border-radius: 2px;
+            background-image: linear-gradient(to right, #D9D9D9 0%, #D9D9D900 100%);
+        }
+    }
+}
+
+@media (max-width: 775px) {
+    .PaymentInfo {
+        margin-top: 26px;
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h4 {
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .SplitDescription {
+        flex-direction: column;
+    }
+
+    .SplitDescText {
+        width: 100%;
+        margin-top: 27px;
+    }
+
+    .SplitDescImg {
+        width: 100%;
+        max-width: 400px;
+        align-self: center;
+        margin-top: 32px;
+    }
+
+    .PayType {
+        width: 73px;
+        height: 33px;
+    }
+
+    .SberType {
+        width: 46.33px;
+        height: 12.79px;
+    }
+
+    .TinkType {
+        width: 69.83px;
+        height: 20.19px;
+    }
+
+    .SbpType {
+        width: 52.37px;
+        height: 28.27px;
+    }
+
+    .SplitType {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 550px) {
+    .PointPC {
+        display: none;
+    }
+
+    .PointMob {
+        display: block;
+    }
+
+    .StepsLine {
+        top: 6px;
+        height: 65px;
+        border: double 1px transparent;
+        border-radius: 18px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 120%;
+            left: -20%;
+            height: 1px;
+            top: -1px;
+            background-image: linear-gradient(to right, #D9D9D9 0%, #D9D9D900 100%);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -1px;
+            border-radius: 1px;
+            background-image: linear-gradient(to right, #D9D9D9 0%, #D9D9D900 100%);
+        }
+    }
+
+    .ShipStep {
+        height: 33px;
+        font-size: 10px;
+        width: unset;
+    }
+
+    .StepsBox2 {
+        margin-top: 33px;
+    }
+}

@@ -1,0 +1,250 @@
+.ItemContainer {
+    width: 18.28%;
+    margin-top: 32px;
+    margin-left: 1.71%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ItemContainer.Global {
+    width: 22.85%;
+    margin-top: 32px;
+    margin-left: 2.15%;
+}
+
+.ItemImg {
+    width: 100%;
+    height: 14.9vw;
+    max-height: 252px;
+    overflow: hidden;
+    border: solid 1px #eaeaea;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    cursor: pointer;
+    position: relative;
+
+    img {
+        // margin: 12px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.ItemImgBox {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    padding: 10px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // z-index: -1;
+}
+
+.ItemImgStyle {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 !important;
+}
+
+.WishIconBox {
+    margin: 12px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    transition: transform 0.1s linear;
+    
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.25);
+        }
+    }
+}
+
+.WishIcon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform 0.1s linear, opacity 0.1s linear;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.WishIcon.Active {
+    opacity: 1;
+}
+
+.ItemInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ItemImg.Global {
+    height: calc((100vw - 215px) / 6);
+}
+
+.ItemSub {
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #020202;
+    cursor: pointer;
+}
+
+.ItemSplit {
+    margin-top: 16px;
+    width: fit-content;
+    border: double 1.5px transparent;
+    border-radius: 8px;
+    background-image: linear-gradient(white, white),
+        linear-gradient(to bottom left, #65AEFE 0%, #A081ED 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+    span {
+        display: block;
+        margin: 4px 8px;
+        font-size: 14px;
+        font-weight: 600;
+        background: linear-gradient(to top left, #65AEFE 0%, #A081ED 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+.ItemPrice {
+    margin-top: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #020202;
+}
+
+.ItemShip {
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #0202024d;
+}
+
+@media (max-width: 1240px) {
+    .ItemContainer {
+        width: 22.85%;
+        margin-left: 2.15%;
+    }
+
+    .ItemContainer.Global {
+        width: 30.46%;
+        margin-left: 2.87%;
+    }
+
+    .ItemImg {
+        height: 18.8vw;
+    }
+
+    .ItemImg.Global {
+        height: calc((100vw - 215px) / 4.6);
+    }
+}
+
+@media (max-width: 1025px) {
+    .ItemContainer {
+        width: 30.46%;
+        margin-left: 2.87%;
+    }
+
+    .ItemContainer.Global {
+        width: 48%;
+        margin-left: 0;
+    }
+
+    .ItemImg {
+        height: 25vw;
+    }
+
+    .ItemImg.Global {
+        height: calc((100vw - 215px) / 3.2);
+    }
+}
+
+@media (max-width: 850px) {
+    .ItemContainer.Global {
+        width: 30.46%;
+        margin-left: 2.87%;
+    }
+
+    .ItemImg,
+    .ItemImg.Global {
+        height: 27.7vw;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .ItemContainer,
+    .ItemContainer.Global {
+        width: 48%;
+        margin-left: 0;
+    }
+
+    .ItemImg,
+    .ItemImg.Global {
+        height: 42.3vw;
+        max-height: unset;
+    }
+
+    .ItemSub {
+        margin-top: 12px;
+        font-weight: 600;
+    }
+
+    .ItemSplit {
+        margin-top: 12px;
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .ItemPrice {
+        font-size: 20px;
+    }
+
+    .ItemShip {
+        margin-top: 2px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .ItemSub {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 390px) {
+    .ItemSub {
+        font-size: 12px;
+    }
+
+    .ItemSplit {
+        border-radius: 6px;
+        border: double 1px transparent;
+
+        span {
+            margin: 4px 6px;
+            font-size: 10px;
+        }
+    }
+
+    .ItemPrice {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,117 @@
+.PriceFilter {
+    margin-bottom: 48px;
+}
+
+.PFSub {
+    font-size: 18px;
+    font-weight: 600;
+    color: #020202;
+    margin-bottom: 22px;
+}
+
+.PFArea {
+    color: #7a7a7a;
+    display: flex;
+    flex-direction: row;
+}
+
+.PFAItem {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+
+    span {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    b {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 6px;
+    }
+}
+
+.PriceSlider {
+    width: 100%;
+    height: 4px;
+    margin: 27px 0 5px 0;
+    border-radius: 5px;
+    position: relative;
+
+    .LeftTrack {
+        content: '';
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #d5d5d5;
+        border-radius: 1px;
+    }
+
+    .RightTrack {
+        content: '';
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-color: #d5d5d5;
+        border-radius: 1px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: calc(100% - 34px);
+        left: 17px;
+        height: 4px;
+        background-color: #121212;
+        border-radius: 1px;
+    }
+}
+
+.PriceSlider .thumb {
+    width: 14px;
+    height: 14px;
+    background-color: #121212;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    top: calc(50% - 7px);
+}
+
+@media (max-width: 850px) {
+    .PFAItem {
+        span {
+            font-size: 10px;
+        }
+
+        b {
+            font-size: 12px;
+        }
+    }
+
+    .PriceSlider {
+        width: 100%;
+        height: 4px;
+        margin: 22px 0 5px 0;
+
+        &::before {
+            width: calc(100% - 28px);
+            left: 14px;
+            height: 4px;
+            background-color: #121212;
+            border-radius: 1px;
+        }
+    }
+
+    .PriceSlider .thumb {
+        width: 11px;
+        height: 11px;
+        border-radius: 2px;
+        top: calc(50% - 5.5px);
+    }
+}

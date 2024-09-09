@@ -1,0 +1,584 @@
+@use '../../base.scss';
+
+.ProfileOrders {
+    width: calc(100% - 230px);
+    padding-left: 20px;
+    border-left: solid 1px #EAEAEA;
+}
+
+.POEmpty {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #12121259;
+}
+
+.POrderBox {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid 1px #EAEAEA;
+    border-radius: 8px;
+}
+
+.POrderBox+.POrderBox {
+    margin-top: 28px;
+}
+
+.POInfo {
+    width: calc(100% - 423px - 36px - 36px);
+    padding: 18px;
+    height: fit-content;
+}
+
+.POReport {
+    width: 423px;
+    min-height: calc(100% - 36px);
+    padding: 18px;
+    border-left: solid 1px #EAEAEA;
+    display: flex;
+    flex-direction: column;
+}
+
+.POTop {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.POTitle {
+    font-size: 24px;
+    font-weight: 800;
+    color: #121212;
+}
+
+.POShip {
+    width: fit-content;
+    padding: 5px 4px;
+    background-color: #A8F701;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+        width: 16px;
+        margin-right: 4px;
+    }
+
+    span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #191A1C;
+    }
+}
+
+.POStatusBox {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+.POStatus {
+    width: fit-content;
+    padding: 0 12px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    background-color: #66ADFE;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+}
+
+.POStatus.Red {
+    background-color: #d24444;
+}
+
+.POShip2 {
+    margin-left: 8px;
+    width: fit-content;
+    padding: 0 12px;
+    height: 30px;
+    align-items: center;
+    background-color: #A8F701;
+    border-radius: 4px;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+        width: 18px;
+        margin-right: 4px;
+    }
+
+    span {
+        font-size: 16px;
+        font-weight: 500;
+        color: #191A1C;
+    }
+}
+
+.POItems {
+    margin-top: 14px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -14px;
+}
+
+.POItemCard {
+    width: 129px;
+    margin-left: 14px;
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+.POImgBox {
+    width: calc(100% - 10px);
+    height: calc(138px - 10px);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: solid 1px #F6F6F6;
+    overflow: hidden;
+
+    img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 !important;
+    }
+}
+
+.POItemName {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #808080;
+}
+
+.POItemModel {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #02020259;
+}
+
+.POItemSize {
+    margin-top: 2px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #121212;
+}
+
+.POItemPrice {
+    margin-top: 6px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.POInfoSub {
+    margin: 28px 0 18px 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: #121212;
+}
+
+.POInfoItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.POInfoItem+.POInfoItem {
+    margin-top: 18px;
+}
+
+.POTip {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #808080;
+}
+
+.POInfoText {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #121212;
+}
+
+.POSplitItem {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+        margin-right: 12px;
+    }
+
+    span {
+        font-size: 16px;
+        font-weight: 600;
+        color: #020202;
+    }
+}
+
+.POInfoSub2 {
+    margin: 28px 0 8px 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: #121212;
+}
+
+.POTrack {
+    font-size: 18px;
+    font-weight: 500;
+    color: #808080;
+}
+
+.POContactBtn {
+    margin-top: 28px;
+    width: 250px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    @include base.btn();
+}
+
+.POReportSub {
+    font-size: 24px;
+    font-weight: 800;
+    color: #121212;
+    margin-bottom: 18px;
+}
+
+.POReportBuyPhotos {
+    margin-left: -9px;
+    width: calc(100% + 9px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.POReportStockPhotos {
+    margin-left: -9px;
+    margin-top: -9px;
+    width: calc(100% + 9px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.POReportBuyImgBox {
+    width: calc(33.3% - 9px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 9px;
+    border-radius: 6px;
+    overflow: hidden;
+
+    img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 !important;
+    }
+}
+
+.DemoImg {
+    opacity: 0.05;
+}
+
+.POReportDemoBox {
+    position: absolute;
+    width: calc(100% - 9px - 36px);
+    padding: 0 18px;
+    min-height: 100%;
+    left: 9px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        margin-bottom: 12px;
+    }
+
+    span {
+        max-width: 320px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        color: #020202;
+    }
+}
+
+.POReportStockImgBox {
+    width: calc(33% - 9px);
+    display: flex;
+    align-items: center;
+    margin: 9px 0 0 9px;
+    border-radius: 6px;
+    overflow: hidden;
+
+    img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 1430px) {
+    .ProfileOrders {
+        padding-left: 0;
+        border-left: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1140px) {
+    .POInfo {
+        width: calc(70% - 36px - 36px);
+    }
+
+    .POReport {
+        width: 30%;
+    }
+
+    .POReportSub {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .POReportDemoBox {
+        img {
+            margin-bottom: 8px;
+            width: 30px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .POReportBuyPhotos {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 850px) {
+    .ProfileOrders {
+        width: 100%;
+    }
+
+    .POEmpty {
+        font-size: 14px;
+    }    
+
+    .POrderBox {
+        flex-direction: column;
+    }
+
+    .POInfo {
+        width: calc(100% - 36px);
+    }
+
+    .POReport {
+        width: calc(100% - 36px);
+        border-left: none;
+        border-top: solid 1px #EAEAEA;
+        margin-top: 10px;
+    }
+
+    .POReportSub {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .MyOrdersSub {
+        margin-bottom: 26px;
+    }
+
+    .POTitle {
+        font-size: 14px;
+    }
+
+    .POShip {
+        display: none;
+    }
+
+    .POShip2 {
+        display: flex;
+        height: 24px;
+        padding: 0 4px;
+
+        img {
+            width: 10px;
+        }
+
+        span {
+            font-size: 10px;
+        }
+    }
+
+    .POStatus {
+        font-size: 12px;
+        height: 24px;
+    }
+
+    .POItemCard {
+        width: 88px;
+    }
+
+    .POImgBox {
+        width: calc(100% - 10px);
+        height: calc(94px - 10px);
+    }
+
+    .POItems {
+        margin-top: 12px;
+        padding-bottom: 26px;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: calc(100% + 36px);
+            height: 1px;
+            background-color: #EAEAEA;
+            position: absolute;
+            bottom: 0;
+            left: -4px;
+        }
+    }
+
+    .POItemName {
+        font-size: 9px;
+    }
+
+    .POItemModel {
+        margin-top: 2px;
+        font-size: 9px;
+    }
+
+    .POItemSize {
+        margin-top: 8px;
+        font-size: 10px;
+    }
+
+    .POItemPrice {
+        margin-top: 2px;
+        font-size: 12px;
+    }
+
+    .POInfoSub {
+        font-size: 14px;
+    }
+
+    .POTip {
+        font-size: 12px;
+    }
+
+    .POInfoText {
+        font-size: 12px;
+        margin-top: 4px;
+    }
+
+    .POSplitItem {
+        img {
+            margin-right: 6px;
+            width: 16px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .POInfoSub2 {
+        margin: 28px 0 8px 0;
+        font-size: 14px;
+    }
+
+    .POTrack {
+        font-size: 12px;
+    }
+
+    .POContactBtn {
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .POReportSub {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .POReportDemoBox {
+        img {
+            margin-bottom: 12px;
+            width: 36px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .DemoPC {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .POContactBtn {
+        width: 100%;
+    }
+
+    .POItems {
+        width: calc(100% + 14px);
+
+        &::after {
+            width: calc(100% + 22px);
+        }
+    }
+    
+    .POItemCard {
+        width: calc(33.3% - 14px);
+        margin-left: 14px;
+        margin-top: 14px;
+    }
+    
+    .POImgBox {
+        height: calc(26vw - 10px);
+    }
+}

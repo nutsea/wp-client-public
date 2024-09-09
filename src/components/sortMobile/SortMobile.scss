@@ -1,0 +1,181 @@
+@use '../../base.scss';
+
+.SortBox {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    background-color: #161616BD;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    transition: opacity .2s linear;
+}
+
+.SortBoxHide {
+    opacity: 0;
+}
+
+.SortHeight {
+    display: flex;
+    flex-direction: column;
+}
+
+.SortContainer {
+    width: 200px;
+    height: calc(100svh - 52px);
+    overflow-y: scroll;
+    padding: 26px 20px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform .2s linear;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        display: none;
+    }
+}
+
+.SortHide {
+    transform: translate(100%, 0);
+}
+
+.SortTop {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+
+    span {
+        font-size: 18px;
+        font-weight: 700;
+        color: #020202;
+    }
+}
+
+.SortListItemMob {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+    user-select: none;
+
+    span {
+        display: flex;
+        font-size: 12px;
+        font-weight: 700;
+        color: #020202;
+    }
+}
+
+.SortListItemMob+.SortListItemMob {
+    margin-top: 18px;
+}
+
+.SortCheck {
+    width: 18px;
+    height: 18px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    margin-right: 12px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background-color: #121212;
+        border-radius: 2px;
+        left: calc(50% - 7px);
+        top: calc(50% - 7px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    img {
+        position: absolute;
+        width: 10px;
+        display: block;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+}
+
+.CheckedSort {
+    img {
+        opacity: 1 !important;
+    }
+
+    &::before {
+        opacity: 1 !important;
+    }
+}
+
+.SortSave {
+    margin-top: 32px;
+    height: 38px;
+    min-height: 38px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.SortDrop, .SortAdd {
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    width: 100%;
+    @include base.btn();
+}
+
+.SortDrop {
+    background-color: #f1f1f1;
+    color: #121212;
+    padding: 0;
+    margin-right: 6px;
+}
+
+.SortAdd {
+    background-color: #121212;
+    color: white;
+}
+
+@media (max-width: 1280px) {
+    .SortTop {
+        margin-bottom: 26px;
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .SortClose {
+        img {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+@media (min-width: 850px) {
+    .SortBox {
+        display: none;
+    }
+}

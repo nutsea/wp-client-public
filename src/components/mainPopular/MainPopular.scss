@@ -1,0 +1,67 @@
+.MainPopularContainer {
+    width: 100%;
+    margin: 42px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.MPTop {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.MPSub {
+    font-size: 26px;
+    font-weight: 700;
+    color: #020202;
+}
+
+.MPAll {
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #020202;
+    cursor: pointer;
+
+    img {
+        width: 14px;
+        height: 14px;
+        margin-left: 6px;
+    }
+}
+
+.MPItems {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -1.74%;
+    min-width: 101.74%;
+}
+
+@media (max-width: 1240px) {
+    .MPItems {
+        margin-left: -2.15%;
+        min-width: 102.15%;
+    }
+}
+
+@media (max-width: 1025px) {
+    .MPItems {
+        margin-left: -2.87%;
+        min-width: 102.87%;
+    }
+}
+
+@media (max-width: 720px) {
+    .MPItems {
+        min-width: unset;
+        width: 100%;
+        margin-left: 0;
+        justify-content: space-between;
+    }
+}

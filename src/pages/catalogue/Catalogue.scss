@@ -1,0 +1,248 @@
+.CatalogueContainer {
+    width: 80%;
+    max-width: 1360px;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 600px;
+}
+
+.CatalogueTop {
+    margin-top: 42px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.NoItems {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #12121280;
+}
+
+.CatalogueSub {
+    font-size: 36px;
+    font-weight: 700;
+    color: #020202;
+}
+
+.CatalogueSortPC {
+    border: solid 1px #e6e6e6;
+    border-radius: 8px;
+    padding: 10px 13px;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    transform: translateX(2px);
+
+    img {
+        margin-left: 6px;
+        transition: transform .3s ease;
+    }
+}
+
+.CatalogueSortMob {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+}
+
+.CSMSort, .CSMFilter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    span {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        color: #020202;
+    }
+
+    img {
+        width: 15px;
+        height: 15px;
+        margin-left: 6px;
+    }
+}
+
+.CSMFilter {
+    margin-left: 24px;
+}
+
+.CatalogueSortList {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    height: 236.67px;
+    border: solid 1px #121212;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: white;
+    overflow: hidden;
+    transition: height .3s ease, opacity .3s ease;
+    // z-index: 2;
+}
+
+.HiddenSortList {
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.SortArrowRotate {
+    transform: rotate(180deg);
+}
+
+.SortListItem {
+    white-space: nowrap;
+    padding: 10px 13px;
+    cursor: pointer;
+    transition: background .1s linear;
+    background-color: white;
+
+    @media (hover: hover) {
+        &:hover {
+            background: #f8f8f8;
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            background: #f8f8f8;
+        }
+    }
+}
+
+.SortListItem+.SortListItem {
+    border-top: solid 1px #e6e6e6;
+}
+
+.CatalogueContent {
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 0;
+}
+
+.CatalogueFilters {
+    width: 215px;
+}
+
+.CFSub {
+    font-size: 24px;
+    font-weight: 700;
+    color: #020202;
+    margin-bottom: 32px;
+}
+
+.CatalogueItems {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -2.15%;
+    width: calc(102.15% - 215px - 63px);
+    margin-top: -32px;
+    align-items: stretch;
+}
+
+@media (max-width: 1240px) {
+    .CatalogueItems {
+        margin-left: -2.87%;
+        width: calc(102.87% - 215px - 63px);
+    }
+
+    .CataloguePagination {
+        margin-left: 2.87%;
+    }
+}
+
+@media (max-width: 1025px) {
+    .CatalogueItems {
+        min-width: unset;
+        width: calc(100% - 215px - 63px);
+        margin-left: 0;
+        justify-content: space-between;
+    }
+    
+    .CataloguePagination {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 850px) {
+    .CatalogueContainer {
+        width: 88%;
+        padding: 0 6%;
+    }
+
+    .CatalogueItems {
+        margin-left: -2.87%;
+        min-width: 102.87%;
+    }
+
+    .CataloguePagination {
+        margin-left: 2.87%;
+    }
+
+    .CatalogueFilters {
+        display: none;
+    }
+
+    .CatalogueTop {
+        align-items: center;
+    }
+
+    .CatalogueSortPC {
+        display: none;
+    }
+
+    .CatalogueItems {
+        width: 100%;
+    }
+
+    .CatalogueSortMob {
+        display: flex;
+    }
+}
+
+@media (max-width: 775px) {
+    .CatalogueSub {
+        font-size: 20px;
+    }
+
+    .CatalogueTop {
+        margin-top: 26px;
+    }
+}
+
+@media (max-width: 720px) {
+    .CatalogueItems {
+        min-width: unset;
+        width: 100%;
+        margin-left: 0;
+        justify-content: space-between;
+    }
+
+    .CataloguePagination {
+        margin-left: 0;
+    }
+}

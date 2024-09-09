@@ -1,0 +1,98 @@
+.SizeGridFilter {
+    margin-bottom: 48px;
+}
+
+.SGFSub {
+    font-size: 18px;
+    font-weight: 600;
+    color: #020202;
+    margin-bottom: 22px;
+}
+
+.SGFGridItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+    user-select: none;
+
+    span {
+        display: flex;
+        font-size: 16px;
+        font-weight: 700;
+        color: #020202;
+    }
+}
+
+.SGFGridItem+.SGFGridItem {
+    margin-top: 18px;
+}
+
+.GridCheck {
+    width: 26px;
+    height: 26px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    margin-right: 12px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        background-color: #121212;
+        border-radius: 2px;
+        left: calc(50% - 11px);
+        top: calc(50% - 11px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    img {
+        position: absolute;
+        width: 14px;
+        display: block;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+}
+
+.CheckedGrid {
+    img {
+        opacity: 1 !important;
+    }
+
+    &::before {
+        opacity: 1 !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .SGFGridItem {
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .GridCheck {
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+
+        &::before {
+            width: 14px;
+            height: 14px;
+            left: calc(50% - 7px);
+            top: calc(50% - 7px);
+        }
+
+        img {
+            width: 10px;
+        }
+    }
+}

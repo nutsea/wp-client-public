@@ -1,0 +1,184 @@
+.BannersContainer {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.BannerBox {
+    width: 100%;
+    height: 46.43vw;
+    max-height: 804.3px;
+    z-index: 1;
+    transition: opacity .3s linear;
+    padding-top: 15px;
+
+    .Banner {
+        width: 115.7%;
+        transform: translate(-6.7%, 0);
+        user-select: none;
+        pointer-events: none;
+    }
+
+    .Banner2 {
+        width: 100vw;
+        transform: translate(-6vw, -14px);
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.Banner2 {
+    display: none;
+}
+
+.BanNone {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.BannerBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(6.66vw + 8px);
+    max-width: 128px;
+    min-width: 88px;
+    position: absolute;
+    left: calc(50% - 3.33vw - 4px);
+    top: 79%;
+
+    @media (min-width: 1800px) {
+        left: calc(50% - 64px);
+    }
+
+    @media (max-width: 1200px) {
+        left: calc(50% - 44px);
+    }
+}
+
+.BanLeft,
+.BanRight {
+    width: 3.125vw;
+    height: 3.125vw;
+    max-width: 58px;
+    max-height: 58px;
+    min-width: 40px;
+    min-height: 40px;
+    border: solid 1px #FFFFFFAD;
+    border-radius: 8px;
+    background-color: #FFFFFF42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity .1s linear, transform .1s linear;
+
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:active {
+            transform: scale(0.99);
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            opacity: 0.8;
+        }
+    }
+
+    img {
+        width: 14px;
+        height: 14px;
+        pointer-events: none;
+        user-select: none;
+    }
+}
+
+
+.BanLeft {
+    img {
+        transform: rotate(180deg);
+    }
+}
+
+@media (max-width: 950px) {
+    .BannerBtns {
+        width: calc(5vw + 8px);
+        max-width: 104px;
+        min-width: 72px;
+        top: 77%;
+    }
+
+    .BanLeft,
+    .BanRight {
+        width: 2.5vw;
+        height: 2.5vw;
+        max-width: 48px;
+        max-height: 48px;
+        min-width: 32px;
+        min-height: 32px;
+    }
+}
+
+@media (max-width: 850px) {
+    .BannerBox {
+        height: 50.46vw;
+        max-height: unset;
+    }
+}
+
+@media (max-width: 570px) {
+    .Banner {
+        display: none;
+    }
+
+    .Banner2 {
+        display: block;
+    }
+
+    .BannerBtns {
+        display: none;
+    }
+
+    .BannersContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .BannerPags {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        top: 90%;
+        z-index: 9;
+
+        span {
+            display: block;
+            width: 5px;
+            height: 5px;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            transition: background-color .3s linear, width .3s linear, height .3s linear;
+        }
+
+        span+span {
+            margin-left: 8px;
+        }
+
+        .BannerSelect {
+            width: 8px;
+            height: 8px;
+            background-color: #65AEFE;
+        }
+    }
+
+    .BannerBox {
+        height: 163.89vw;
+    }
+}

@@ -1,0 +1,364 @@
+.StoriesContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 0 72px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.StoryIcon {
+    display: flex;
+    flex-direction: column;
+    width: calc(14%);
+
+    span {
+        width: 100%;
+        text-align: center;
+        margin-top: 16px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #020202;
+    }
+}
+
+.StoryFake {
+    display: none;
+}
+
+.BorderIcon {
+    width: calc(100% - 8px);
+    height: fit-content;
+    // height: 10.73vw;
+    // max-height: 182.4px;
+    border: double 4px transparent;
+    border-radius: 100%;
+    background-image: linear-gradient(white, white),
+        linear-gradient(to bottom left, #65AEFE 0%, #A081ED 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity .1s linear, transform .1s linear;
+
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:active {
+            transform: scale(0.99);
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            opacity: 0.8;
+        }
+    }
+
+    img {
+        width: calc(100% - 8px);
+        height: auto;
+        border-radius: 100%;
+        padding: 4px;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.WatchedStory {
+    background-image: linear-gradient(white, white),
+        linear-gradient(to bottom left, #e4e4e4 0%, #e4e4e4 100%);
+}
+
+.StoriesModal {
+    width: 100vw;
+    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    background-color: #0C0C0B;
+    left: 0;
+    top: 0;
+    z-index: 12;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.NoneStories {
+    display: none;
+}
+
+.StoryItems {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: transform .3s ease;
+}
+
+.Story {
+    height: 31.4vw;
+    width: 17.7vw;
+    border-radius: 8px;
+    margin: 0 0.9375vw;
+    opacity: 0.6;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: height .2s ease, width .2s ease, margin .2s ease, opacity .3s ease;
+}
+
+.ActiveStory {
+    height: 39vw;
+    width: 22.2vw;
+    margin: 0 2.9166vw;
+    opacity: 1;
+}
+
+.FirstStory {
+    margin-left: 38.9vw;
+}
+
+.StoryLine {
+    width: calc(100% - 44px);
+    height: 2px;
+    background-color: #ffffff66;
+    margin-top: 22px;
+    border-radius: 4px;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 0;
+        height: 2px;
+        background-color: #ffffff;
+        border-radius: 4px;
+        transition: width .2s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: StoryProgress 5s linear infinite;
+    }
+}
+
+.StoryLine2 {
+    width: calc(100% - 44px);
+    height: 2px;
+    background-color: #ffffff66;
+    margin-top: 22px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.StoryHead {
+    width: calc(100% - 44px);
+    margin-top: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+
+    span {
+        display: block;
+        margin-left: 12px;
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+    }
+}
+
+.StoryLeft {
+    width: 50vw;
+    height: 100vh;
+    background: linear-gradient(to left, #0C0C0B00 75%, #0C0C0Bcc 100%);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 13;
+}
+
+.StoryRight {
+    width: 50vw;
+    height: 100vh;
+    background: linear-gradient(to right, #ffffff00 75%, #0C0C0Bcc 100%);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 13;
+}
+
+.StoryClose {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 22px;
+    right: 4.6875vw;
+    z-index: 13;
+    cursor: pointer;
+    transition: transform .1s linear;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+
+}
+
+@keyframes StoryProgress {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .StoriesContainer {
+        padding: 0 0 22px 0;
+    }
+
+    .StoryIcon {
+        min-width: 70px;
+
+        span {
+            font-size: 1.6vw;
+            margin-top: 7px;
+        }
+    }
+
+    .StoryIcon+.StoryIcon {
+        margin-left: 12px;
+    }
+
+    .BorderIcon {
+        border: double 0.4vw transparent;
+    }
+
+    .Story {
+        height: 47.1vw;
+        width: 26.55vw;
+        margin: 0 0.9375vw;
+    }
+
+    .ActiveStory {
+        height: 58.5vw;
+        width: 33.3vw;
+        margin: 0 2.9166vw;
+    }
+
+    .FirstStory {
+        margin-left: 33.35vw;
+    }
+}
+
+@media (max-width: 860px) {
+    .BorderIcon {
+        border: double 3.3px transparent;
+
+        img {
+            width: calc(100% - 4px);
+            padding: 2px;
+        }
+    }
+
+    .Story {
+        height: 70.65vw;
+        width: 39.835vw;
+        margin: 0 0.9375vw;
+    }
+
+    .ActiveStory {
+        height: 87.75vw;
+        width: 49.95vw;
+        margin: 0 2.9166vw;
+    }
+
+    .FirstStory {
+        margin-left: 25.025vw;
+    }
+}
+
+@media (max-width: 625px) {
+    .StoryIcon {
+        span {
+            font-size: 10px;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .Story {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .ActiveStory {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+    }
+
+    .FirstStory {
+        margin-left: 0;
+    }
+
+    .StoryLeft,
+    .StoryRight {
+        background: none;
+    }
+
+    .StoryHead {
+        position: relative;
+        align-items: center;
+    }
+
+    .StoryClose {
+        right: 0;
+        top: calc(50% - 14px);
+        height: 28px;
+        width: 28px;
+    }
+
+    .StoriesContainer {
+        width: 100vw;
+        margin-left: -6vw;
+    }
+
+    .StoryFake {
+        display: block;
+        min-width: 6vw;
+        height: 100%;
+    }
+}

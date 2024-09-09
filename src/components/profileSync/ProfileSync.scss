@@ -1,0 +1,13 @@
+@use '../../base.scss';
+
+.ProfileSyncSuccess {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #00A040;
+}
+
+.ProfileSyncError {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #E33A3A;
+}
